@@ -6,12 +6,10 @@ def calculator(x,y,op):
     elif op == '*':
         return x * y
     elif op == '/':
-        if y != 0: 
-            return x / y
-        else:
-            return "Error: Division by zero"
+        if y == 0: raise ZeroDivisionError("cannot divide by zero")
+        return x / y
     else:
-        return "Invalid operation"
+        raise ValueError("invalid operation")
 
 result = calculator(10, 5, '+')  
 print(result)        
